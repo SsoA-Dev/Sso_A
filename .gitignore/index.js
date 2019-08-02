@@ -3,7 +3,6 @@
 //                Mon discord : Sso_A#8588                   //
 ///////////////////////////////////////////////////////////////
 const Discord = require('discord.js')
-const botconfig = require('./botconfig.json')
 const ytdl = require("ytdl-core");
 const fs = require('fs');
 const active = new Map();
@@ -27,7 +26,7 @@ fs.readdir('./commands/', (err, files) =>{
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
-  let prefix = botconfig.prefix;
+  var prefix = ("!");
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
